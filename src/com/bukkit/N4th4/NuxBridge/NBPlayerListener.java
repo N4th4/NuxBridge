@@ -21,6 +21,8 @@ public class NBPlayerListener extends PlayerListener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         
+        NBLogger.info(player.getName() + " is login in ...");
+        
         Statement state;
         try {
             state = plugin.conn.createStatement();
@@ -36,6 +38,8 @@ public class NBPlayerListener extends PlayerListener {
             
             String group = plugin.config.getString("groups." + id_group);
             
+            NBLogger.info(player.getName() + "'s group is " + group);
+            
             for (Object worldObj : plugin.config.getList("worlds")) {
                 String world = (String) worldObj;
                 Group permGroup = plugin.permissions.safeGetGroup(world, group);
@@ -49,6 +53,8 @@ public class NBPlayerListener extends PlayerListener {
                 
                 permUser.addParent(permGroup);
             }
+            
+            NBLogger.info(player.getName() + " was succesfully added in group " + group);
         } catch (Exception e) {
             e.printStackTrace();
         }
