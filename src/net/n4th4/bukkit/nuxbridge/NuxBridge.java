@@ -12,10 +12,12 @@ import org.bukkit.util.config.Configuration;
 
 public class NuxBridge extends JavaPlugin {
     private final NBPlayerListener playerListener = new NBPlayerListener(this);
-    public final Logger            log            = this.getServer().getLogger();
+    public Logger                  log;
     public Configuration           config;
 
     public void onEnable() {
+        log = this.getServer().getLogger();
+
         File configFile = new File("plugins/NuxBridge/config.yml");
         if (configFile.exists()) {
             config = new Configuration(configFile);
