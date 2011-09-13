@@ -1,6 +1,5 @@
+target/
 bin/
-build/
-jar/
 .classpath
 .project
 *~

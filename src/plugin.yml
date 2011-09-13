@@ -1,3 +1,4 @@
 name: NuxBridge
-main: com.bukkit.N4th4.NuxBridge.NuxBridge
-version: 1.1
+version: 1.2
+author: N4th4
+main: net.n4th4.bukkit.nuxbridge.NuxBridge
