@@ -42,7 +42,7 @@ public class NBPlayerListener extends PlayerListener {
 
             plugin.log.info("[NuxBridge] " + player.getName() + "'s group is " + group);
 
-            plugin.getServer().dispatchCommand(new ConsoleCommandSender(plugin.getServer()), "permissions player setgroup " + player.getName() + " " + group);
+            plugin.getServer().dispatchCommand(plugin.getServer().getConsoleSender(), "permissions player setgroup " + player.getName() + " " + group);
 
             conn.close();
 
